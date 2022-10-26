@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        font-family: sans-serif;
+      }
+
+      .container {
+        height: 100vh;
+        padding: 1.5rem;
+        background: wheat;
+      }
+
+      .nav-1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 5vh;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .nav-mob a {
+        padding: 0.5rem 0;
+        display: block;
+        background-color: grey;
+        margin: 0.1rem 0;
+        transition: 1s;
+        padding: 0.5rem;
+      }
+
+      .nav-mob a:hover {
+        background-color: rgb(74, 74, 74);
+      }
+
+      .menu {
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 40vh;
+      }
+
+      .nav-web {
+        display: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      @media (min-width: 680px) {
+        .menu {
+          display: none;
+        }
+
+        .nav-mob {
+          display: none;
+        }
+
+        .nav-web {
+          display: flex;
+        }
+        .nav-web a {
+          display: inline-block;
+          padding: 0 1rem;
+          transition: all 1s;
+        }
+
+        .nav-web a:hover {
+          background: gray;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-1">
+        <a href="" class="logo">ShoeBrand</a>
+        <img class="menu" src="menu.svg" alt="" />
+        <ul class="nav-web">
+          <li><a href="">Home</a></li>
+          <li><a href="">Products</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-2">
+        <ul class="nav-mob hidden">
+          <li><a href="">Home</a></li>
+          <li><a href="">Products</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <div class="hero">
+        <h1>ShoeBrand</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+          beatae recusandae consectetur sed optio. Vero est, ratione nihil ut
+          dolor sed. Doloribus est corporis sapiente nesciunt rem fugiat et
+          asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Magnam deserunt cum odit est impedit ut, voluptates ducimus ab placeat
+          illo.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const ul = document.querySelector(".nav-mob");
+      const menu = document.querySelector(".menu");
+
+      menu.addEventListener("click", function () {
+        if (ul.classList.contains("hidden")) {
+          ul.classList.remove("hidden");
+        } else {
+          ul.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
